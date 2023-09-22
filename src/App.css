@@ -1,38 +1,264 @@
-.App {
+
+body{
+  background-color: black;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  position: relative;
+}
+.section{
+  /* position: relative; */
   text-align: center;
+  
+}
+.section h2{
+  position: absolute;
+  font-size: 62px;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+}
+.section h2:nth-child(1){
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+}
+.section h2:nth-child(2){
+  color: #fff;
+  animation: animate 4s ease-in-out infinite;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@keyframes animate{
+  0%,
+  100%{
+    clip-path: polygon(0% 45%,
+    0 46%, 9% 47%, 20% 50%, 32% 54%, 46% 60%, 57% 63%, 68% 66%, 80% 68%, 91% 69%, 100% 69%, 100% 0%, 1% 0%, 0% 0%);
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  }
+  50%{
+    clip-path: polygon(0 76%, 17% 73%, 32% 69%, 44% 62%, 53% 57%, 58% 54%, 66% 50%, 77% 46%, 89% 41%, 96% 40%, 100% 40%, 99% 0%, 99% 0%, 0% 0%);
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loading{
+  color: white;
+}
+.app-container{
+  margin-top: 120px;
+}
+.card{
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px 10px;
+  width: 200px;
+  border: 1px solid white;
+  border-radius: 2px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover{
+  transform: scale(1.2);
+  border-radius: 4px;
+}
+.card .number{
+  background-color: #fcfc79;
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 12px;
+}
+.rock {
+  background: linear-gradient(to top, #c79081 0%, #dfa579 100%);
+}
+.rockbtn{
+  background: linear-gradient(to top,#a9786b 0%,#ba7e51 100%);
+}
+.ghost {
+  
+  background: linear-gradient(to top, #b7b7b8 0%, #e2ebf0 100%);
+}
+.ghostbtn{
+  background: linear-gradient(to top,#89898a 0%,#cbdce4 100%);
+}
+.electric {
+  
+  background: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+}
+.electricbtn{
+  background: linear-gradient(to right, #ce2e02 0%,#dac03b 100%);
+}
+.bug {
+  
+  background: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+}
+.bugbtn{
+  background: linear-gradient(to top,#af8753 0%,#deba89 100%);
+}
+.poison {
+  
+  background: linear-gradient(to top, #df89b5 0%, #bfd9fe 100%);
+}
+.poisonbtn{
+  background: linear-gradient(to top,#c06092 0%,#90b3e3 100%);
+}
+.normal {
+  
+  background: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+}
+.normalbtn{
+  background: linear-gradient(-225deg,#b6dfd2 0%,#d9b4d2 100%);
+}
+.fairy {
+  
+  background: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+}
+.fairybtn{
+  background: linear-gradient( to top,#e97a7e 0%,#f87dd1 99%,#efcfe5 100%);
+}
+.fire {
+  
+  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+.firebtn{
+  background: linear-gradient(120deg,#efca53 0%,#d96c4d 100%);
+}
+.grass {
+  
+  background: linear-gradient(120deg,#caf665 0%,#71dd7f 100%);
+}
+.grassbtn{
+  background: linear-gradient(120deg, #b0dc48 0%, #4ea75a 100%);
+
+}
+.water {
+  
+  background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+}
+.waterbtn{
+  background: linear-gradient(120deg,#82e3ea 0%,#3979d3 100%);
+}
+.ground{
+  
+  background: linear-gradient(315deg, #772f1a 0%, #f2a65a 74%);
+  
+}
+.groundbtn{
+  background: linear-gradient(315deg,#3d160b 0%,#d89451 74%);
+}
+
+.card img,.modal .details img{
+  width: 120px;
+  height:120px;
+}
+.pokemon-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  
+  gap: 8px;
+}
+.center{
+  display: flex;
+  justify-content: center;
+}
+.details h3{
+  padding: 5px;
+  text-decoration: underline;
+  margin: 0;
+}
+.btn{
+  margin-top: 24px;
+  padding: 9px;
+  border: 0px;
+  border-radius: 10px;
+  opacity: 8;
 }
 
-.App-link {
-  color: #61dafb;
+.showmore2{
+  background: radial-gradient(circle,rgba(63,94,251,1) 0%,rgba(251,70,107,1) 100%);
+}
+.showmore2:hover{
+  background:radial-gradient(circle,rgba(238,174,202,1) 0%,rgba(148,187,233,1) 100%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+#inactive{
+  display: none;
+}
+
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+   background-color:rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  transform: scale(1.1);
+}
+.modal-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 500px;
+  height: auto;
+  background-color: white;
+
+}
+.modal .details{
+  position: relative;
+  padding:20px;
+  
+}
+.image-name{
+  text-align: center;
+}
+.weight{
+  text-align: center;
+}
+.pokemon-preview{
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.totaldata{
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3,1fr);
+  justify-content: center;
+  align-items: center;
+  
+}
+.close{
+  position: absolute;
+  top:5%;
+  right: 4%;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+}
+.modalname{
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.stats,.base-stats{
+  margin-bottom: 10px;
+}
+@media (max-width:620px){
+  body{
+    width: 600px;
   }
-  to {
-    transform: rotate(360deg);
+  .modal-content{
+    width: 80%;
+    
+  }
+  .pokemon-preview{
+    flex-direction: column;
   }
 }
